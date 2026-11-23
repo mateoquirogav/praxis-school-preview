@@ -70,16 +70,29 @@ svg.ps-i{width:20px;height:20px;flex:none}
 .ps-coment-cab{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end}
 .ps-coment-cab .ps-cita{font-size:26px;font-weight:300;line-height:1.35;color:#fff;border-left:3px solid var(--celeste);padding-left:22px}
 .ps-coment-cab .ps-cita b{font-weight:600}
-.ps-capturas{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
-.ps-cap{aspect-ratio:9/13;border-radius:14px;background:rgba(255,255,255,.07);border:1px dashed rgba(255,255,255,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:16px;color:var(--claro);font-size:13px}
-.ps-cap svg{width:28px;height:28px;color:var(--celeste)}
-.ps-cap img{width:100%;height:100%;object-fit:cover;border-radius:14px}
+.ps-car{position:relative;margin-top:48px}
+.ps-car-pista{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px}
+.ps-car-pista::-webkit-scrollbar{display:none}
+.ps-rv{flex:0 0 calc((100% - 54px)/4);scroll-snap-align:start;aspect-ratio:9/16;border-radius:16px;background:var(--degrade2);border:1px solid rgba(255,255,255,.18);position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#fff;text-align:center}
+.ps-rv video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ps-rv b{font-size:14px;font-weight:600;position:relative}
+.ps-rv small{font-size:12px;color:var(--claro);font-weight:300;position:relative}
+.ps-com{position:absolute;left:12px;right:12px;bottom:14px;z-index:2;background:#fff;color:var(--navy);border-radius:14px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;text-align:left;box-shadow:0 12px 30px rgba(0,0,0,.35);opacity:0;transform:translateY(14px) scale(.96);transition:opacity .35s ease,transform .45s cubic-bezier(.2,.8,.2,1)}
+.ps-rv.ps-ver .ps-com{opacity:1;transform:none}
+.ps-com i{width:30px;height:30px;border-radius:50%;flex:none;background:linear-gradient(135deg,#f9a8d4,#a5b4fc)}
+.ps-com span{display:block;font-size:11px;font-weight:600;color:var(--gris2)}
+.ps-com p{font-size:13px;line-height:1.35;font-weight:500}
+.ps-car-btns{display:flex;gap:10px;justify-content:flex-end;margin-top:18px}
+.ps-car-btns button{width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.08);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.ps-car-btns button:hover{background:rgba(255,255,255,.18)}
+.ps-car-btns svg{width:20px;height:20px}
 
 /* ---------- aspiracional ---------- */
 .ps-asp{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
 .ps-cifra{margin-top:30px;background:var(--degrade2);color:#fff;border-radius:16px;padding:30px 32px}
 .ps-cifra small{display:block;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--celeste)}
 .ps-cifra b{display:block;font-size:46px;font-weight:700;line-height:1.1;margin:8px 0 6px;letter-spacing:-.01em}
+.ps-cont{font-variant-numeric:tabular-nums}
 .ps-cifra p{font-size:14px;font-weight:300;color:var(--suave)}
 .ps-vs{border:1px solid var(--linea);border-radius:16px;overflow:hidden}
 .ps-vs-fila{display:grid;grid-template-columns:1fr 1fr}
@@ -93,7 +106,7 @@ svg.ps-i{width:20px;height:20px;flex:none}
 .ps-vs-mal li svg{color:#c2410c}
 .ps-vs-bien{background:var(--fondo)}
 .ps-vs-bien li svg{color:var(--verde)}
-.ps-vs-total{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--linea)}
+.ps-vs-total{display:grid;grid-template-columns:1fr;border-top:1px solid var(--linea);background:#fff7f3}
 .ps-vs-total div{padding:18px 24px}
 .ps-vs-total div + div{border-left:1px solid var(--linea);background:var(--fondo)}
 .ps-vs-total span{display:block;font-size:12px;color:var(--gris2);font-weight:500}
@@ -108,7 +121,7 @@ svg.ps-i{width:20px;height:20px;flex:none}
 .ps-tabla th:first-child,.ps-tabla td:first-child{text-align:left}
 .ps-tabla thead th{background:var(--degrade);color:#fff;font-weight:600;font-size:15px}
 .ps-tabla thead th small{display:block;font-weight:300;color:var(--claro);font-size:13px}
-.ps-tabla .ps-g td{background:var(--fondo);font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--acento)}
+.ps-tabla .ps-g td{background:var(--degrade);font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#fff;padding:13px 18px;border-bottom:0}
 .ps-tabla td.ps-top{background:#F7FAFD}
 .ps-si{display:inline-flex;width:26px;height:26px;border-radius:50%;background:#e9f7ef;color:var(--verde);align-items:center;justify-content:center}
 .ps-si svg{width:15px;height:15px}
@@ -159,7 +172,7 @@ svg.ps-i{width:20px;height:20px;flex:none}
   .ps-packs{margin-left:auto;margin-right:auto;gap:34px}
   .ps-asp{grid-template-columns:1fr;gap:40px}
   .ps-coment-cab{grid-template-columns:1fr;gap:24px}
-  .ps-capturas{grid-template-columns:repeat(2,1fr)}
+  .ps-rv{flex-basis:calc((100% - 36px)/3)}
 }
 @media (max-width:760px){
   .ps-wrap{padding:0 18px}
@@ -176,6 +189,7 @@ svg.ps-i{width:20px;height:20px;flex:none}
   .ps-intro{font-size:16px}
   .ps-coment-cab .ps-cita{font-size:21px}
   .ps-cifra b{font-size:36px}
+  .ps-rv{flex-basis:72%}
   .ps-vs-fila,.ps-vs-total{grid-template-columns:1fr}
   .ps-vs-col + .ps-vs-col,.ps-vs-total div + div{border-left:0;border-top:1px solid var(--linea)}
   /* tabla: el nombre del renglón arriba, los tildes abajo */
@@ -257,11 +271,20 @@ svg.ps-i{width:20px;height:20px;flex:none}
       </div>
       <p class="ps-cita">«¿Cómo hacés eso en Tiendanube?» · «<b>Hacete un curso</b>» · «¿Enseñás?»</p>
     </div>
-    <div class="ps-capturas">
-      <div class="ps-cap"><svg><use href="#i-img"/></svg>Captura de comentario</div>
-      <div class="ps-cap"><svg><use href="#i-img"/></svg>Captura de comentario</div>
-      <div class="ps-cap"><svg><use href="#i-img"/></svg>Captura de comentario</div>
-      <div class="ps-cap"><svg><use href="#i-img"/></svg>Captura de comentario</div>
+    <div class="ps-car">
+      <div class="ps-car-pista" id="ps-pista">
+        <div class="ps-rv"><div class="ps-play"><svg><use href="#i-play"/></svg></div><b>Video 1</b><small>Acá va tu video</small>
+          <div class="ps-com"><i></i><div><span>Diseñadora de Tiendanube</span><p>¿Cómo hacés eso en Tiendanube?</p></div></div></div>
+        <div class="ps-rv"><div class="ps-play"><svg><use href="#i-play"/></svg></div><b>Video 2</b><small>Acá va tu video</small>
+          <div class="ps-com"><i></i><div><span>Emprendedora</span><p>Hacete un curso, te lo compro ya</p></div></div></div>
+        <div class="ps-rv"><div class="ps-play"><svg><use href="#i-play"/></svg></div><b>Video 3</b><small>Acá va tu video</small>
+          <div class="ps-com"><i></i><div><span>Diseñadora web</span><p>¿Enseñás? Quiero aprender a hacer esos bloques</p></div></div></div>
+        <div class="ps-rv"><div class="ps-play"><svg><use href="#i-play"/></svg></div><b>Video 4</b><small>Acá va tu video</small>
+          <div class="ps-com"><i></i><div><span>Dueña de tienda</span><p>Esto no lo vi en ninguna otra web</p></div></div></div>
+        <div class="ps-rv"><div class="ps-play"><svg><use href="#i-play"/></svg></div><b>Video 5</b><small>Acá va tu video</small>
+          <div class="ps-com"><i></i><div><span>Diseñador freelance</span><p>¿Con qué app hiciste eso? ¿O es código?</p></div></div></div>
+      </div>
+      <div class="ps-car-btns"><button type="button" data-dir="-1" aria-label="Anterior"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M15 6l-6 6 6 6"/></svg></button><button type="button" data-dir="1" aria-label="Siguiente"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg></button></div>
     </div>
   </div>
 </section>
@@ -275,7 +298,7 @@ svg.ps-i{width:20px;height:20px;flex:none}
       <p class="ps-intro">La mayoría de los diseñadores de Tiendanube arman la web con la plantilla y le suman apps como Wigy para los widgets. Yo hago esos mismos bloques con código propio. El cliente paga una vez y la web es suya.</p>
       <div class="ps-cifra">
         <small>Últimos 3 meses</small>
-        <b>+$8.000.000</b>
+        <b class="ps-cont" data-hasta="8000000">+$8.000.000</b>
         <p>facturados con este método, diseñando tiendas para mis clientes.</p>
       </div>
     </div>
@@ -303,8 +326,7 @@ svg.ps-i{width:20px;height:20px;flex:none}
         </div>
       </div>
       <div class="ps-vs-total">
-        <div><span>Apps durante un año</span><b class="ps-tach">$3.000.000</b></div>
-        <div><span>Una web a medida, una vez</span><b class="ps-ok">$300.000</b></div>
+        <div><span>Lo que paga un cliente en apps durante un año</span><b class="ps-tach">$3.000.000</b></div>
       </div>
     </div>
   </div>
@@ -373,7 +395,7 @@ svg.ps-i{width:20px;height:20px;flex:none}
 
     <div class="ps-yo">
       <div class="ps-av"><img src="logo-navy.png" alt=""></div>
-      <p><b>Te respondo yo, Mateo.</b> No un equipo ni un bot: cada mensaje lo contesto personalmente.</p>
+      <p><b>Te respondo yo, Mateo.</b> Tengo equipo para las webs, pero los mensajes de los cursos los contesto yo, personalmente.</p>
     </div>
   </div>
 </section>
@@ -418,6 +440,36 @@ svg.ps-i{width:20px;height:20px;flex:none}
     h+='<tr class="ps-f"><td>'+f[0]+'</td><td>'+(f[1]?si:no)+'</td><td class="ps-top">'+(f[2]?si:no)+'</td><td>'+(f[3]?si:no)+'</td></tr>';
   });
   document.getElementById('ps-filas').innerHTML=h;
+
+  // contador +$8.000.000
+  var c=document.querySelector('.ps-cont');
+  if(c&&'IntersectionObserver' in window){
+    var fin=+c.getAttribute('data-hasta'), fmt=function(n){return '+$'+Math.round(n).toLocaleString('es-AR');};
+    c.textContent=fmt(0);
+    new IntersectionObserver(function(e,o){ if(!e[0].isIntersecting)return; o.disconnect();
+      var t0=performance.now(), d=1800;
+      (function paso(t){var k=Math.min(1,(t-t0)/d); c.textContent=fmt(fin*(1-Math.pow(1-k,3))); if(k<1)requestAnimationFrame(paso);})(t0);
+    },{threshold:.5}).observe(c);
+  }
+
+  // carrusel: avanza solo y el comentario aparece en cada video visible
+  var pista=document.getElementById('ps-pista'), rv=[].slice.call(pista.children);
+  function paso(){return rv[1].offsetLeft-rv[0].offsetLeft;}
+  function mover(dir){
+    var max=pista.scrollWidth-pista.clientWidth;
+    if(dir>0&&pista.scrollLeft>=max-4) pista.scrollTo({left:0,behavior:'smooth'});
+    else pista.scrollBy({left:dir*paso(),behavior:'smooth'});
+  }
+  document.querySelectorAll('.ps-car-btns button').forEach(function(b){b.onclick=function(){mover(+b.getAttribute('data-dir'));};});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      var el=e.target;
+      if(e.isIntersecting&&e.intersectionRatio>.6){ setTimeout(function(){el.classList.add('ps-ver');},700); }
+      else el.classList.remove('ps-ver');
+    });},{root:pista,threshold:[0,.6,1]});
+    rv.forEach(function(x){io.observe(x);});
+  } else rv.forEach(function(x){x.classList.add('ps-ver');});
+  setInterval(function(){ mover(1); },3800);
 })();
 </script>
 </body>
